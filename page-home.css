@@ -355,7 +355,6 @@ background-color: #f10a0a;
 color: #ffffff;
     
 padding: 10px 20px;
-margin-left: 10px;
 border-radius: 3px;
 }
 
@@ -644,6 +643,7 @@ font-weight: 700;
 
 .descricao {
 font-size: 1.8rem;
+margin-bottom: 40px;
 }
 
 
