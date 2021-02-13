@@ -234,7 +234,7 @@ margin-bottom: 7px;
 
 .descricao {
 font-weight: 400;
-margin-bottom: 40px;
+margin-bottom: 20px;
 fonte-size: 1.4rem;
 }
 
@@ -322,7 +322,6 @@ padding-right: 10px;
 
 .comprarZap {
 margin-top: 10px;
-margin-bottom: 30px;
 text-align: left;
 }
 
@@ -343,8 +342,10 @@ transition: 200ms;
 }
 
 .btnLimpaCart {
-margin-bottom: 40px;
+margin-top: 30px;
+margin-bottom: 30px;
 text-align: left;
+margin-left: 0;
 }
 
 .limpar {
@@ -546,7 +547,11 @@ width: 6%;
 }
 
 .comprarZap {
-margin-bottom: 60px;
+margin-bottom: 40px;
+}
+    
+.btnLimpaCart {
+margin-bottom: 60px;  
 }
               
 
