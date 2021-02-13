@@ -234,7 +234,7 @@ margin-bottom: 7px;
 
 .descricao {
 font-weight: 400;
-margin-bottom: 20px;
+margin-bottom: 40px;
 fonte-size: 1.4rem;
 }
 
@@ -322,7 +322,7 @@ padding-right: 10px;
 
 .comprarZap {
 margin-top: 10px;
-margin-bottom: 10px;
+margin-bottom: 30px;
 text-align: left;
 }
 
@@ -355,6 +355,7 @@ background-color: #f10a0a;
 color: #ffffff;
     
 padding: 10px 20px;
+margin-left: 0;
 border-radius: 3px;
 }
 
@@ -650,10 +651,6 @@ margin-bottom: 40px;
 /*==Carrinho==*/
 .imgCart {
 width: 5%;
-}
-    
-.comprarZap {
-margin-bottom: 40px;
 }
 
 .tutorial {
