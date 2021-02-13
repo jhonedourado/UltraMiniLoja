@@ -1,0 +1,175 @@
+<!--Toda honra e glória para o SENHOR-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sua Loja</title>
+        <meta name="description" content="Sobre sua loja">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jhone Dourado">
+
+        <link rel="icon" href="#">
+
+        <link rel="stylesheet" type="text/css" href="./page-home.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <script src="./produtos.js"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    </head>
+
+
+    <body>  
+        <!--cabeçalho-->      
+        <header class="cabecalho">
+            <div class="container">
+                <div class="todo-cabecalho">
+                    <a class="logo-header" href="#">Logo</a>
+                    <a class="btn-cart" href="#">Carrinho<i class="fas fa-shopping-cart"></i><p class="bola"></p></a>
+                </div>
+            </div>
+        </header>
+
+
+        <!--conteudos-->
+        <main class="conteudos">
+
+            <section class="banner">
+                <div class="container">
+                    <div class="todo-banner">
+                        <header class="texto-banner">
+                            <h1>Um look criativo e bem montado pode fazer mágica.</h1>
+                            <h2>Confira as nossas ofertas!</h2>
+                        </header>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="produtos">
+                <script>
+                    inicializarLoja = () => {
+                        var containerProdutos = document.getElementById('produtos');
+                        
+                        items.map((val)=>{
+                            containerProdutos.innerHTML+= `
+
+                            <div id="produto-single">
+                            <img src="`+val.img+`">
+                            <p class="nome">`+val.nome+`</p>
+                            <p class="preco">`+val.preco+`</p>
+                            <p class="dividido">`+val.dividido+`</p>
+                            <p class="descricao">`+val.descricao+`</p>
+                            <a class="addCart" key="`+val.id+`" href="#">Adicionar ao carrinho</a>
+                            </div>
+                            
+                            `;
+                        })
+                    }
+                    
+                    inicializarLoja();
+                </script>
+            </section>
+
+
+            <section id="avisoAddCart">
+                <p>Produto Adicionado</p>
+            </section>
+
+
+            <section id="carrinho">
+                <script>
+                    atualizarCarrinho = () => {
+                    var containerCarrinho = document.getElementById('carrinho');
+                    containerCarrinho.innerHTML = `
+                    
+                    <div class="comprarZap">
+                    <a class="zap" href="https://api.whatsapp.com/send?phone=5574988581824">Comprar pelo WhattsApp</a>
+                    <a class="limpar" href="./index.html">Limpar Carrinho</a>
+                    </div>
+                    <div class="tutorial">
+                    <p><span>Como Comprar:<br></span><span>1-</span> Tire um print do seu carrinho de compras.<br><span>2-</span> Clique no botão do WhattsApp, você será direcionado(a) para o nosso WhattsApp, lá você só precisa enviar o print do carrinho de compras e o resto é com a gente :)<br><br><span>Seu Carrinho:</span></p>
+                    </div>
+                    
+                    `;
+
+                    items.map((val)=> {
+                       if(val.quantidade > 0) {
+                       containerCarrinho.innerHTML+= `
+   
+                        <div id="produto-cart">
+                        <img class="imgCart" src="`+val.img+`">
+                        <p class="nomeCart">`+val.nome+`</p>
+                        <p class="precoCart">`+val.preco+`</p>
+                        <p class="quantCart">Quantidade: `+val.quantidade+`</p>
+                        </div>
+                       
+                       `;
+                       }
+                    })
+                    }
+
+                    var addCart = document.getElementsByClassName('addCart'); 
+                    for(var i = 0; i < addCart.length; i++){
+                        addCart[i].addEventListener("click",function(){
+                            let key = this.getAttribute('key');
+                            items[key].quantidade++;
+                            atualizarCarrinho();
+                            event.preventDefault();
+                        })
+                    }
+                </script>
+
+                <script>
+                    $('.btn-cart').on('click', function() { 
+                        $('html, body').animate({
+                            scrollTop: $("#carrinho").offset().top
+                        }, 0);
+
+                        $('.banner').fadeToggle('close');
+                        $('#produtos').fadeToggle('close');
+                        $('#rodape').fadeToggle('close');
+                        $('#carrinho').fadeToggle('slow');
+
+                        event.preventDefault();
+                    });
+
+                    $('.addCart').on('click', function() { 
+                        $('#avisoAddCart').fadeIn('50').delay( 1200 );
+                        $('#avisoAddCart').fadeOut('50');  
+                        $('.bola').fadeIn('slow');
+                    });    
+                </script>
+            </section>
+        </main>
+
+
+        <footer id="rodape">
+            <div class="container">
+                <div class="todo-cabecalho">
+                    <div class="ultra">
+                        <p>Sua Loja</p>
+                        <a class="link-politica" href="#">política de privacidade</a>
+                    </div>
+            
+                    <div class="redes">
+                        <!--facebook-->
+                        <a href="https://www.facebook.com/Ultra-Technology-106919837789485" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+                        <!--instagram-->
+                        <a href="https://www.instagram.com/ultra._.technology/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                        <!--email-->
+                        <a href="mailto:ultratechnoloogy.contato@gmail.com" target="_blank"><i class="far fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
