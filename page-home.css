@@ -226,7 +226,7 @@ font-weight: 700;
 }
 
 .dividido {
-font-size: 1.4rem;
+font-size: 1rem;
 font-weight: 500;
 
 margin-bottom: 7px;
@@ -234,8 +234,8 @@ margin-bottom: 7px;
 
 .descricao {
 font-weight: 400;
-margin-bottom: 15px;
-fonte-size: 1.4rem;
+margin-bottom: 20px;
+fonte-size: 1.3rem;
 }
 
 .addCart {
@@ -649,7 +649,7 @@ font-weight: 700;
 
 .descricao {
 font-size: 1.8rem;
-margin-bottom: 40px;
+margin-bottom: 20px;
 }
 
 
