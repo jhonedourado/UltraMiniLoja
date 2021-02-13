@@ -309,15 +309,18 @@ width: 12%;
 .nomeCart {
 border-right: 1px solid #bebebe;
 padding-right: 10px;
+padding-left: 10px;
 }
 
 .precoCart {
 border-right: 1px solid #bebebe;
 padding-right: 10px;
+padding-left: 10px;
 }
 
 .quantCart {
 padding-right: 10px;
+padding-left: 10px;
 }
 
 .comprarZap {
@@ -649,7 +652,6 @@ font-weight: 700;
 
 .descricao {
 font-size: 1.8rem;
-margin-bottom: 20px;
 }
 
 
