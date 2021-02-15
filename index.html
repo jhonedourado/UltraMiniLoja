@@ -20,26 +20,25 @@
     
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
         <script src="./produtos.js"></script>
-
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     </head>
 
 
-    <body>  
-        <!--cabeçalho-->      
+    <body>        
         <header class="cabecalho">
             <div class="container">
                 <div class="todo-cabecalho">
                     <a class="logo-header" href="#">Logo</a>
                     <a class="btn-cart" href="#">Carrinho<i class="fas fa-shopping-cart"></i><p class="bola"></p></a>
+                    <a class="zap" href="#">Comprar pelo zap</a>
+                    <a class="fechaCart">X</a>
                 </div>
             </div>
         </header>
 
 
-        <!--conteudos-->
         <main class="conteudos">
 
             <section class="banner">
@@ -61,8 +60,7 @@
                         
                         items.map((val)=>{
                             containerProdutos.innerHTML+= `
-
-                            <div id="produto-single">
+                            <div class="produto-single">
                             <img src="`+val.img+`">
                             <p class="nome">`+val.nome+`</p>
                             <p class="preco">`+val.preco+`</p>
@@ -78,40 +76,36 @@
                     inicializarLoja();
                 </script>
             </section>
+            
 
-
-            <section id="avisoAddCart">
+            <div id="avisoAddCart">
                 <p>Produto Adicionado</p>
-            </section>
+            </div>
 
 
             <section id="carrinho">
+                <div id="productsCart">
+
+                </div>
+
+                <div class="btnLimpaCart">
+                    <a class="limpar" href="./index.html">Limpar Carrinho</a>
+                </div>
+
                 <script>
                     atualizarCarrinho = () => {
-                    var containerCarrinho = document.getElementById('carrinho');
-                    containerCarrinho.innerHTML = `
-                    
-                    <div class="comprarZap">
-                    <a class="zap" href="https://api.whatsapp.com/send?phone=5574988581824">Comprar pelo WhattsApp</a>
-                    </div>
-                    <div class="btnLimpaCart">
-                    <a class="limpar" href="./index.html">Limpar Carrinho</a>
-                    </div>
-                    <div class="tutorial">
-                    <p><span>Como Comprar:<br></span><span>1-</span> Tire um print do seu carrinho de compras.<br><span>2-</span> Clique no botão do WhattsApp, você será direcionado(a) para o nosso WhattsApp, lá você só precisa enviar o print do carrinho de compras e o resto é com a gente :)<br><br><span>Seu Carrinho:</span></p>
-                    </div>
-                    
-                    `;
+                    var containerCarrinho = document.getElementById('productsCart');
+                    containerCarrinho.innerHTML = "";
 
                     items.map((val)=> {
                        if(val.quantidade > 0) {
                        containerCarrinho.innerHTML+= `
    
-                        <div id="produto-cart">
+                        <div class="produto-cart">
                         <img class="imgCart" src="`+val.img+`">
-                        <p class="nomeCart">`+val.nome+`</p>
-                        <p class="precoCart">`+val.preco+`</p>
-                        <p class="quantCart">Quantidade: `+val.quantidade+`</p>
+                        <p class="nomeCart">`+val.nome+`, </p>
+                        <p class="precoCart">`+val.preco+`, </p>
+                        <p class="quantCart">Quantidade: `+val.quantidade+` |</p>
                         </div>
                        
                        `;
@@ -136,19 +130,38 @@
                             scrollTop: $("#carrinho").offset().top
                         }, 0);
 
-                        $('.banner').fadeToggle('close');
-                        $('#produtos').fadeToggle('close');
-                        $('#rodape').fadeToggle('close');
-                        $('#carrinho').fadeToggle('slow');
+                        $('.banner').hide();
+                        $('#produtos').hide();
+                        $('#rodape').hide();
+                        $('#carrinho').show();
 
+                        $('.zap').addClass('block2');
+                        $('.fechaCart').addClass('block');
+                        $('.btn-cart').addClass('block3');
+                        event.preventDefault();
+                    });
+
+                    $('.fechaCart').on('click', function() { 
+                        $('.banner').show();
+                        $('#produtos').show();
+                        $('#rodape').show();
+                        $('#carrinho').hide();
+
+                        $('.zap').removeClass('block2');
+                        $('.fechaCart').removeClass('block');
+                        $('.btn-cart').removeClass('block3');
                         event.preventDefault();
                     });
 
                     $('.addCart').on('click', function() { 
                         $('#avisoAddCart').fadeIn('50').delay( 1200 );
                         $('#avisoAddCart').fadeOut('50');  
-                        $('.bola').fadeIn('slow');
-                    });    
+                        $('.bola').fadeIn();
+                    }); 
+                    
+                    $('.zap').on('click', function() { 
+                        $(location).attr("href", "https://api.whatsapp.com/send?phone=+5574988581824&text=" + encodeURI("Olá, gostaria de pedir:\n\n" + $('#productsCart').text()));
+                    });  
                 </script>
             </section>
         </main>

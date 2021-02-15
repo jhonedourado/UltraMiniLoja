@@ -9,423 +9,465 @@ outline: none;
 font-weight: 300; 
 box-sizing: border-box; 
 font-family: 'Roboto', sans-serif;}
-body {background-color: #ffffff;}
+body {background-color: #f5f5f5;}
 a {text-decoration: none;}
 ul {list-style: none;}
 img {max-width: 100%;}  
 :root {font-size: 62.5%;}
-
-
+    
+    
 /*font-size*/
 .banner h1 {
-font-size: 2.8rem;
+font-size: 3rem;
 font-weight: 700;
 line-height: 1.5;
 }
-
+    
 .banner h2 {
 font-size: 1.8rem;
 font-weight: 300;
 }
-    
+        
 header h1 {
 font-size: 2.4rem;
 font-weight: 500;
 line-height: 1.5;
 }
-    
+        
 body h1 {
 font-size: 2.4rem;
 font-weight: 500;
 line-height: 1.5;
 }
-    
+        
 body h3 {
 font-size: 2rem;
 font-weight: 500;
 }
-            
+                
 body p {
 font-size: 1.6rem;
 line-height: 1.5;
 font-weight: 400;
 }
-            
+                
 body a {
 font-size: 1.6rem;
 font-weight: 400;
 }
-
-
+    
+    
 /*container*/
 .container {
 width: 100%;
 }
-
-
+    
+    
 /*cabeçalho*/   
 .cabecalho {
 width: 100%;
 height: 75px;
-    
+        
 padding: 0 5%;
-    
+        
 position: fixed;
 background-color: #ffffff;
 z-index: 10;
-        
+
+box-shadow: 0 0 5px 5px rgb(0, 0, 0, 0.1);
+            
 display: flex;
 align-items: center;
 justify-content: center;
 }
-    
+        
 .todo-cabecalho {
 width: 100%;
 display: flex;
 flex-direction: row;
-justify-content: space-between;
 align-items: center;
 }
-  
+      
 .logo-header {
 font-size: 2.5rem;
 font-weight: 900;
 color: #0d80ff;
+margin-right: auto;
 }
-
+    
 .btn-cart {
 width: auto;
 height: 30px;
-    
+        
 text-align: center;
 padding: 20px;
-margin-right: 0;
-    
+        
 border-radius: 5px;
-    
+        
 color: #ffffff;
 background: #0d80ff;
-    
+        
 font-size: clamp(1.7rem, 1.5vw, 2rem);
 font-weight: 400;
-    
+        
 display: flex;
 justify-content: center;
 align-items: center;
 }
-    
+
+.block3 {
+display: none;
+}
+        
 .btn-cart i {
 margin-left: 7px;
 }
-
+    
 .bola {
 width: 12px;
 height: 12px;
-
+    
 margin-left: 7px;
 border-radius: 100%;
-
+    
 background-color: #f10a0a;
-
+    
 display: none;
 }
-    
+        
 .btn-cart:hover {
 background-color: #096ad1;
 transition: 200ms;
 }
 
+.fechaCart {
+width: auto;
+height: 30px;
+        
+text-align: center;
+padding: 20px;
+        
+border-radius: 5px;
+        
+color: #ffffff;
+background-color: #0d80ff;
+        
+font-size: 2rem;
+font-weight: 700;
+        
+display: none;
+}
 
+.fechaCart:hover {
+background-color: #096ad1;
+transition: 200ms;
+}
+
+.block {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+            
+.zap {
+width: auto;
+height: 30px;
+            
+text-align: center;
+padding: 20px;
+            
+border-radius: 5px;
+            
+color: #ffffff;
+background-color: #0ae44b;
+            
+font-size: 2rem;
+font-weight: 400;
+            
+display: none
+}
+
+.block2 {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 10px;
+}
+            
+.zap:hover {
+background-color: #09ce44;
+transition: 200ms;
+}
+    
+    
 /*==conteudos==*/
 main {
 width: 100%;
 text-align: center;
 background-color: #f5f5f5;
 }
-
-
+    
+    
 /*==banner==*/
 .banner {
 width: 100%;
 height: 80vh;
-    
-background-image: linear-gradient(to right, rgba(6, 59, 172, 0.89), rgba(13, 128, 255, 0.6)), url(../capa.jpg);
+        
+background-image: url(../capa.jpg);
 background-repeat: no-repeat;
 background-position: center;
-  
+      
 padding: 40px 5%;
-    
+        
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-    
+        
 .texto-banner {
 width: 100%;
 }
-    
+        
 .banner h1 {
 color: #ffffff;
 line-height: 1.3em;
 text-align: center;
-    
+        
 margin-bottom: 7px;
 }
-    
+        
 .banner h2 {
 color: #ffffff;
 line-height: 1.5em;
 text-align: center;
 }
-
-
+    
+    
 /*==Produtos==*/
 #produtos {
 width: 100%;
 height: auto;
-
+    
 background-color: #f5f5f5;
-padding: 40px 5%;
-
+padding: 40px 5% 5px 5%;
+    
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-between;
 align-items: flex-start;
 }
-
-#produto-single {
+    
+.produto-single {
 width: 100%;
-
+    
 padding: 25px 25px 25px 25px;
 margin-bottom: 30px;
-
+    
 text-align: left;
 background-color: #ffffff;
-
+    
 border-radius: 5px;
 border: 1px solid #bebebe;
 }
-
-#produto-single img {
+    
+.produto-single img {
 width: 100%;
 padding: 0 40px 30px 40px;
 }
-
+    
 .nome {
 font-weight: 500;
 color: #747272;
-
+    
 margin-bottom: 5px;
 }
-
+    
 .preco {
 font-size: 2rem;
 font-weight: 700;
 }
-
+    
 .dividido {
 font-size: 1.1rem;
 font-weight: 500;
-
+    
 margin-bottom: 7px;
 }
-
+    
 .descricao {
 font-weight: 400;
 margin-bottom: 20px;
-fonte-size: 1.3rem;
+font-size: 1.5rem;
 }
-
+    
 .addCart {
 width: 100%;
 height: auto;
-
+    
 background-color: #ffa500;
 color: #ffffff;
-
+    
 padding: 7px 20px;
 border-radius: 3px;
 }
-
+    
 .addCart:hover {
 background-color: #eb9800;
 transition: 200ms;
 }
-
-
+    
+    
 /*==Avisos==*/
 #avisoAddCart {
 display: none;
-
+    
 position: fixed;
 right: 0;
 bottom: 0;
-
+    
 background-color: #0ae44b;
 color: #ffffff;
 border-radius: 5px 0 0 0;
-
+    
 padding: 5px 40px;
 text-align: center;
 }
-
-
+    
+    
 /*==Carrinho==*/
 #carrinho {
 width: 100%;
-min-height: 1000px;
-
-position: absolute;
-top: 75px;
-padding: 30px 5% 40px 5%;
-
+min-height: 88vh;
+    
+padding: 105px 5% 40px 5%;
+    
 background-color: #f5f5f5;
-
+    
 display: none;
+flex-direction: column;
+align-items: flex-start;
 }
-
-#produto-cart {
+        
+.btnLimpaCart {
+margin-top: 30px;
+text-align: left;
+margin-left: 0;
+}
+        
+.limpar {
 width: 100%;
-
+height: auto;
+            
+background-color: #f10a0a;
+color: #ffffff;
+            
+padding: 10px 20px;
+margin-left: 0;
+border-radius: 3px;
+}
+        
+.limpar:hover {
+background-color: #d10909;
+}
+        
+.tutorial {
+width: 100%;
+text-align: left;
+margin-bottom: 10px;
+}
+        
+span {
+font-weight: 700;
+}
+    
+.produto-cart {
+width: 100%;
+    
 background-color: #ffffff;
 border: 1px solid #bebebe;
-
+    
 padding: 10px 20px;
 margin-bottom: 15px;
-
+    
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
 justify-content: space-between;
 align-items: flex-start;
 }
-
+    
 .imgCart {
 width: 12%;
 }
-
+    
 .nomeCart {
 border-right: 1px solid #bebebe;
 padding-right: 10px;
 padding-left: 10px;
 }
-
+    
 .precoCart {
 border-right: 1px solid #bebebe;
 padding-right: 10px;
 padding-left: 10px;
 }
-
+    
 .quantCart {
 padding-right: 10px;
 padding-left: 10px;
 }
-
-.comprarZap {
-margin-top: 10px;
-text-align: left;
-}
-
-.zap {
-width: 100%;
-height: auto;
-
-background-color: #0d80ff;
-color: #ffffff;
-
-padding: 10px 20px;
-border-radius: 3px;
-}
-
-.zap:hover {
-background-color: #096ad1;
-transition: 200ms;
-}
-
-.btnLimpaCart {
-margin-top: 30px;
-margin-bottom: 30px;
-text-align: left;
-margin-left: 0;
-}
-
-.limpar {
-width: 100%;
-height: auto;
     
-background-color: #f10a0a;
-color: #ffffff;
     
-padding: 10px 20px;
-margin-left: 0;
-border-radius: 3px;
-}
-
-.limpar:hover {
-background-color: #d10909;
-}
-
-.tutorial {
-width: 100%;
-text-align: left;
-margin-bottom: 20px;
-}
-
-span {
-font-weight: 700;
-}
-
-
 /*rodapé*/   
 #rodape {
 width: 100%;
 background-color: #0d80ff;
 padding: 30px 5%;
-    
+        
 display: flex;
 justify-content: center;
 align-items: center;
 }
-    
+        
 .todo-cabecalho {
 width: 100%;
-    
+        
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
 }
-    
+        
 .redes {
 margin-left: 15px;
 }
-                
+                    
 .redes i {
 color: #ffffff;
 font-size: clamp(2.7rem, 2vw, 2.7rem);
 margin-left: 10px;
 margin-bottom: 10px;
 }
-        
+            
 .redes i:hover {
 color: #096ad1;
 transition: 200ms;
 }
-                
+                    
 .ultra {
 color: #ffffff;
 background-color: transparent;
 margin-left: 0;
 }
-        
+            
 .ultra p {
 font-weight: 400;
 margin-bottom: 1px;
 }
-    
-    
+        
+        
 /*LGPD*/
 .link-politica {
 font-size: clamp(1.2rem, 1.2vw, 1.5rem);
@@ -433,75 +475,71 @@ color: #ffffff;
 border-bottom: 1px solid #ffffff;
 font-weight: 300;
 }
-
-
-
-
-
-/*==nots e pcs==*/@media screen and (min-width: 760px) {
+    
+    
+    
+    
+    
+/*==tablets==*/@media screen and (min-width: 760px) {
 /*==font-size==*/
 .banner h1 {
 font-size: 3.5rem;
 font-weight: 700;
 line-height: 1.5;
 }
-    
+        
 .banner h2 {
 font-size: 2rem;
 font-weight: 300;
 }
-
+    
 body p {
 font-size: 1.8rem;
 line-height: 1.5;
 }
-                
+                    
 body a {
 font-size: 1.8rem;
 }
-
-
+    
+    
 /*cabecalho*/
 .cabecalho {
 padding: 0 7.5%;
 }
-
-.btn-menu {
-padding: 1.5% 2%;
-}
-
-
+    
+    
 /*==banner==*/
 .banner {
 padding: 150px 7.5% 80px 7.5%;
-    
+        
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: flex-start;
 }
-
+    
 .todo-banner {
 width: 100%;
-
+    
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 }
-        
+            
 .texto-banner {
 width: 60%;
 margin: 0;
 }
-                
+                    
 .banner h1 {
 text-align: left;
 line-height: 1.3em;
 margin: 0;
 margin-bottom: 5px;
 }
-                
+                    
 .banner h2 {
 width: 100%;
 color: #ffffff;
@@ -509,174 +547,170 @@ text-align: left;
 line-height: 1.5em;
 margin: 0;
 }
-       
-        
+           
+            
 /*==Produtos==*/
 #produtos {
 width: 100%;
-
+max-width: 1200px;
+    
 padding: 40px 7.5%;
-margin: 0;
-
+    
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-between;
 align-items: flex-start;
 }
-
-#produto-single {
-width: 47%;
     
+.produto-single {
+width: 47%;
+        
 padding: 25px 25px 35px 25px;
 margin-bottom: 40px;
-
+    
 border-radius: 7px;
 }
-
-#produto-single img {
+    
+.produto-single img {
 padding: 0 10px 20px 10px;
 }
-
+    
 .preco {
 font-size: 2.3rem;
 font-weight: 700;
 }
-    
+        
 .dividido {
 font-size: 1.3rem;
 font-weight: 500;
-
+    
 margin-bottom: 7px;
 }
-
-
+    
+    
 /*==Carrinho==*/
+#carrinho {
+max-width: 1200px;
+    
+padding: 115px 7.5% 40px 7.5%;
+}
+
 .imgCart {
 width: 6%;
 }
-
-.comprarZap {
-margin-bottom: 40px;
-}
+                  
     
-.btnLimpaCart {
-margin-bottom: 60px;  
-}
-              
-
 /*rodapé*/
 #rodape {
 padding-left: 7.5%;
 padding-right: 7.5%;
 }
-
+    
 }
-
-
+    
+    
 /*nots e pcs*/@media screen and (min-width: 1280px) {
 /*==Font-size==*/
 .banner h1 {
 font-size: 3.8rem;
 }
-
+    
 .banner h2 {
 font-size: 2rem;
 }
-            
+                
 header h1 {
 font-size: 3.8rem;
 }
-    
+        
 body h1 {
 font-size: 3.8rem;
 }
-    
+        
 body h3 {
 font-size: 2.4rem;
 }
-                    
+                        
 body p {
 font-size: 2rem;
 }
-                    
+                        
 body a {
 font-size: 2rem;
 }
-
+    
 /*container*/
 .container {
 width: 100%;
 max-width: 1200px;
 }
-
-
+    
+    
 /*cabecalho*/
 .cabecalho {
 padding-left: 0;
 padding-right: 0;
 } 
-
-.btn-ligar {
-padding: 1.5% 2%;
-}
-
-
+    
+    
 /*banner*/
 .banner {
 height: 80vh;
 padding-left: 0;
 padding-right: 0;
 }
-
+    
 .texto-banner {
 width: 45%;
 }
-
-
-/*==Produtos==*/
-#produtos {
-width: 100%;
-max-width: 1200px;
-
+    
+    
+/*==Produtos==*/  
+#produtos {      
 padding: 50px 0;
 margin: auto;
 }
 
-#produto-single {
+.produto-single {
 width: 31%;
-        
+            
 padding: 25px 25px 40px 25px;
 margin-bottom: 40px;
-        
+            
 border-radius: 7px;
 }
-
+    
 .preco {
 font-size: 2.5rem;
 font-weight: 700;
 }
-
+    
 .descricao {
 font-size: 1.8rem;
 }
-
-
+    
+    
 /*==Carrinho==*/
+#carrinho {
+padding: 125px 0 40px 0;
+margin: auto;
+}
+
 .imgCart {
 width: 5%;
 }
-
+    
 .tutorial {
 width: 50%;
 }
-
-
+    
+    
 /*rodape*/
 #rodape {
 padding-left: 0;
 padding-right: 0;
 }
-
-
+    
+    
 }
