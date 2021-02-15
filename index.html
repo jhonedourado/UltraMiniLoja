@@ -105,7 +105,7 @@
                         <img class="imgCart" src="`+val.img+`">
                         <p class="nomeCart">`+val.nome+` </p>
                         <p class="precoCart">`+val.preco+` </p>
-                        <p class="quantCart">Quantidade: `+val.quantidade+` |</p>
+                        <p class="quantCart">Quantidade: `+val.quantidade+` </p>
                         </div>
                        
                        `;
@@ -160,7 +160,7 @@
                     }); 
                     
                     $('.zap').on('click', function() { 
-                        $(location).attr("href", "https://api.whatsapp.com/send?phone=+5574988581824&text=" + encodeURI("Olá, gostaria de pedir:\n\n" + $('#productsCart').text()));
+                        $(location).attr("href", "https://api.whatsapp.com/send?phone=+5574988581824&text=" + encodeURI("Olá, gostaria de pedir:\n" + $('#productsCart').text()));
                     });  
                 </script>
             </section>
