@@ -30,9 +30,8 @@
         <header class="cabecalho">
             <div class="container">
                 <div class="todo-cabecalho">
-                    <a class="logo-header" href="./index.html">Logo</a>
+                    <a class="logo-header" href="#">Logo</a>
                     <a class="btn-cart" href="#">Carrinho<i class="fas fa-shopping-cart"></i><p class="bola"></p></a>
-                    <a class="zap" href="#">Comprar pelo zap</a>
                     <a class="fechaCart">X</a>
                 </div>
             </div>
@@ -88,7 +87,8 @@
 
                 </div>
 
-                <div class="btnLimpaCart">
+                <div class="comprarLimpar">
+                    <a class="zap" href="#">Comprar pelo zap</a>
                     <a class="limpar" href="./index.html">Limpar Carrinho</a>
                 </div>
 
@@ -135,7 +135,6 @@
                         $('#rodape').hide();
                         $('#carrinho').show();
 
-                        $('.zap').addClass('block2');
                         $('.fechaCart').addClass('block');
                         $('.btn-cart').addClass('block3');
                         event.preventDefault();
@@ -147,7 +146,6 @@
                         $('#rodape').show();
                         $('#carrinho').hide();
 
-                        $('.zap').removeClass('block2');
                         $('.fechaCart').removeClass('block');
                         $('.btn-cart').removeClass('block3');
                         event.preventDefault();
@@ -160,7 +158,7 @@
                     }); 
                     
                     $('.zap').on('click', function() { 
-                        $(location).attr("href", "https://api.whatsapp.com/send?phone=+5574988581824&text=" + encodeURI("Olá, gostaria de pedir:\n" + $('#productsCart').text()));
+                        $(location).attr("href", "https://api.whatsapp.com/send?phone=+5574988581824&text=" + encodeURI("Olá, gostaria de pedir:\n\n" + $('#productsCart').text()));
                     });  
                 </script>
             </section>
